@@ -38,6 +38,12 @@ import functionIsStringWithValue from '../templates/core/functions/isStringWithV
 import functionIsSuccess from '../templates/core/functions/isSuccess.hbs';
 import functionResolve from '../templates/core/functions/resolve.hbs';
 import templateCoreHttpRequest from '../templates/core/HttpRequest.hbs';
+import nextjsFetchGetHeaders from '../templates/core/nextjs_fetch/getHeaders.hbs';
+import nextjsFetchGetRequestBody from '../templates/core/nextjs_fetch/getRequestBody.hbs';
+import nextjsFetchGetResponseBody from '../templates/core/nextjs_fetch/getResponseBody.hbs';
+import nextjsFetchGetResponseHeader from '../templates/core/nextjs_fetch/getResponseHeader.hbs';
+import nextjsFetchRequest from '../templates/core/nextjs_fetch/request.hbs';
+import nextjsFetchSendRequest from '../templates/core/nextjs_fetch/sendRequest.hbs';
 import nodeGetHeaders from '../templates/core/node/getHeaders.hbs';
 import nodeGetRequestBody from '../templates/core/node/getRequestBody.hbs';
 import nodeGetResponseBody from '../templates/core/node/getResponseBody.hbs';
@@ -187,6 +193,14 @@ export const registerHandlebarTemplates = (root: {
     Handlebars.registerPartial('fetch/getResponseHeader', Handlebars.template(fetchGetResponseHeader));
     Handlebars.registerPartial('fetch/sendRequest', Handlebars.template(fetchSendRequest));
     Handlebars.registerPartial('fetch/request', Handlebars.template(fetchRequest));
+
+    // Specific files for the nextjs_fetch client implementation
+    Handlebars.registerPartial('nextjs_fetch/getHeaders', Handlebars.template(nextjsFetchGetHeaders));
+    Handlebars.registerPartial('nextjs_fetch/getRequestBody', Handlebars.template(nextjsFetchGetRequestBody));
+    Handlebars.registerPartial('nextjs_fetch/getResponseBody', Handlebars.template(nextjsFetchGetResponseBody));
+    Handlebars.registerPartial('nextjs_fetch/getResponseHeader', Handlebars.template(nextjsFetchGetResponseHeader));
+    Handlebars.registerPartial('nextjs_fetch/sendRequest', Handlebars.template(nextjsFetchSendRequest));
+    Handlebars.registerPartial('nextjs_fetch/request', Handlebars.template(nextjsFetchRequest));
 
     // Specific files for the xhr client implementation
     Handlebars.registerPartial('xhr/getHeaders', Handlebars.template(xhrGetHeaders));

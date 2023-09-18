@@ -30,6 +30,9 @@ import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 {{/if}}
+{{#equals @root.httpClient 'nextjs_fetch'}}
+import type { ApiRequestOptions } from '../core/ApiRequestOptions'
+{{/equals}}
 
 {{#equals @root.httpClient 'angular'}}
 @Injectable({
@@ -75,16 +78,26 @@ export class {{{name}}}{{{@root.postfix}}} {
 	public {{{name}}}({{>parameters}}): Observable<{{>result}}> {
 		return this.httpRequest.request({
 	{{else}}
+	{{#equals @root.httpClient 'nextjs_fetch'}}
+	public {{{name}}}({{>parameters}}{{#if parameters}}, {{/if}}{ cache, next }: { cache?: ApiRequestOptions['cache'], next?: ApiRequestOptions['next'] } = {}): CancelablePromise<{{>result}}> {
+		return this.httpRequest.request({
+	{{else}}
 	public {{{name}}}({{>parameters}}): CancelablePromise<{{>result}}> {
 		return this.httpRequest.request({
+	{{/equals}}
 	{{/equals}}
 	{{else}}
 	{{#equals @root.httpClient 'angular'}}
 	public {{{name}}}({{>parameters}}): Observable<{{>result}}> {
 		return __request(OpenAPI, this.http, {
 	{{else}}
+	{{#equals @root.httpClient 'nextjs_fetch'}}
+	public static {{{name}}}({{>parameters}}{{#if parameters}}, {{/if}}{ cache, next }: { cache?: ApiRequestOptions['cache'], next?: ApiRequestOptions['next'] } = {}): CancelablePromise<{{>result}}> {
+		return __request(OpenAPI, {
+	{{else}}
 	public static {{{name}}}({{>parameters}}): CancelablePromise<{{>result}}> {
 		return __request(OpenAPI, {
+	{{/equals}}
 	{{/equals}}
 	{{/if}}
 			method: '{{{method}}}',
@@ -145,6 +158,10 @@ export class {{{name}}}{{{@root.postfix}}} {
 				{{/each}}
 			},
 			{{/if}}
+			{{#equals @root.httpClient 'nextjs_fetch'}}
+			cache,
+			next,
+			{{/equals}}
 		});
 	}
 

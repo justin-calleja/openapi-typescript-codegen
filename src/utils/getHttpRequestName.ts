@@ -8,6 +8,8 @@ export const getHttpRequestName = (httpClient: HttpClient): string => {
     switch (httpClient) {
         case HttpClient.FETCH:
             return 'FetchHttpRequest';
+        case HttpClient.NEXTJS_FETCH:
+            return 'NextjsFetchHttpRequest';
         case HttpClient.XHR:
             return 'XHRHttpRequest';
         case HttpClient.NODE:

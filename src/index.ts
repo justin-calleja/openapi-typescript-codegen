@@ -36,7 +36,7 @@ export type Options = {
  * service layer, etc.
  * @param input The relative location of the OpenAPI spec
  * @param output The relative location of the output directory
- * @param httpClient The selected httpClient (fetch, xhr, node or axios)
+ * @param httpClient The selected httpClient (nextjs_fetch, fetch, xhr, node or axios)
  * @param clientName Custom client class name
  * @param useOptions Use options or arguments functions
  * @param useUnionTypes Use union types instead of enums
