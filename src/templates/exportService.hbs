@@ -79,7 +79,7 @@ export class {{{name}}}{{{@root.postfix}}} {
 		return this.httpRequest.request({
 	{{else}}
 	{{#equals @root.httpClient 'nextjs_fetch'}}
-	public {{{name}}}({{>parameters}}{{#if parameters}}, {{/if}}{ cache, next }: { cache?: ApiRequestOptions['cache'], next?: ApiRequestOptions['next'] } = {}): CancelablePromise<{{>result}}> {
+	public {{{name}}}({{>parameters}} { cache, next }: { cache?: ApiRequestOptions['cache'], next?: ApiRequestOptions['next'] } = {}): CancelablePromise<{{>result}}> {
 		return this.httpRequest.request({
 	{{else}}
 	public {{{name}}}({{>parameters}}): CancelablePromise<{{>result}}> {
