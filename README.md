@@ -1,3 +1,7 @@
+⚠️ this is just a fork to add some options to `fetch` client. See last few commits on this branch:
+
+https://github.com/justin-calleja/openapi-typescript-codegen/tree/nextjsfetch
+
 # OpenAPI Typescript Codegen
 
 [![NPM][npm-image]][npm-url]

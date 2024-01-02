@@ -1,12 +1,12 @@
 {
-    "name": "openapi-typescript-codegen",
+    "name": "nextjsfetch-openapi-typescript-codegen",
     "version": "0.25.0",
     "description": "Library that generates Typescript clients based on the OpenAPI specification.",
     "author": "Ferdi Koomen",
-    "homepage": "https://github.com/ferdikoomen/openapi-typescript-codegen",
+    "homepage": "https://github.com/justin-calleja/openapi-typescript-codegen/tree/nextjsfetch",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ferdikoomen/openapi-typescript-codegen.git"
+        "url": "git+http/github.com/ferdikoomen/openapi-typescript-codegen.git"
     },
     "bugs": {
         "url": "https://github.com/ferdikoomen/openapi-typescript-codegen/issues"
