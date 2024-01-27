@@ -24,6 +24,7 @@ https://github.com/justin-calleja/openapi-typescript-codegen/tree/nextjsfetch
 - Supports tsc and @babel/plugin-transform-typescript
 - Supports aborting of requests (cancelable promise pattern)
 - Supports external references using [json-schema-ref-parser](https://github.com/APIDevTools/json-schema-ref-parser/)
+- Supports Next.js 13 app directory Fetch
 
 ## Install
 
